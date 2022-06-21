@@ -15,7 +15,6 @@ class createTable extends Controller
             $table->string('name');
             $table->integer('price');
             $table->string('content');
-            $table->boolean('active');
             $table->timestamps();
         });
         Schema::create('newproduct', function (Blueprint $table) {
@@ -23,7 +22,6 @@ class createTable extends Controller
             $table->string('name');
             $table->integer('price');
             $table->string('content');
-            $table->boolean('active');
             $table->timestamps();
         });
         echo("tao bang thanh cong");

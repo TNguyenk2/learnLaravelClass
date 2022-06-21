@@ -6,6 +6,47 @@ use Illuminate\Http\Request;
 use App\Http\Requests\RoomRequest;
 
 class RoomController extends Controller
+// {
+//     public function index()
+//     {
+//         return view('addRoom');
+//     }
+//     public function addRoom(RoomRequest $Request)
+//     {
+//         // $target_dir = "images/";
+//         // $target_file = $target_dir . basename($_FILES["roomImage"]["name"]);
+//         // $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+//         // $check = getimagesize($_FILES["roomImage"]["tmp_name"]);
+//         // if ($check !== false) {
+//         //  $path = move_uploaded_file($_FILES["roomImage"]["tmp_name"], $target_file);
+//         // } else {
+//         //     echo '<script>alert("Thêm ảnh thất bại")</script>';
+//         //     return view('addRoom');
+//         // }
+
+//         $image = $Request->file('roomImage');
+//         $path = $image->move('images', $image->getClientOriginalName());
+
+
+//         $newRoom = [
+//             'name' => $Request->roomName,
+//             'description' => $Request->roomDescription,
+//             'price' => $Request->roomPrice,
+//             'image' => $image->getClientOriginalName(),
+//         ];
+
+//         if (isset($_SESSION['rooms'])) {
+//             $_SESSION['rooms'][] = $newRoom;
+//         } else {
+//             if (session_id() === '')
+//                 session_start();
+//             $_SESSION['rooms'][] = $newRoom;
+//         }
+//         echo '<script>alert("Thêm phòng thành công")</script>';
+//         return view('addRoom')->with('newRoom',$newRoom);
+//     }
+// }
 {
     public function index()
     {
@@ -14,7 +55,7 @@ class RoomController extends Controller
     public function addRoom(RoomRequest $Request)
     {
         // $target_dir = "images/";
-        // $target_file = $target_dir . basename($_FILES["roomImage"]["name"]);
+        // $target_file = $tar	get_dir . basename($_FILES["roomImage"]["name"]);
         // $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
         // $check = getimagesize($_FILES["roomImage"]["tmp_name"]);
@@ -22,7 +63,7 @@ class RoomController extends Controller
         //  $path = move_uploaded_file($_FILES["roomImage"]["tmp_name"], $target_file);
         // } else {
         //     echo '<script>alert("Thêm ảnh thất bại")</script>';
-        //     return view('addRoom');
+        //     return view('adminpage');
         // }
 
         $image = $Request->file('roomImage');
@@ -38,13 +79,14 @@ class RoomController extends Controller
 
         if (isset($_SESSION['rooms'])) {
             $_SESSION['rooms'][] = $newRoom;
-        } else {
+        }
+        else {
             if (session_id() === '')
                 session_start();
             $_SESSION['rooms'][] = $newRoom;
         }
         echo '<script>alert("Thêm phòng thành công")</script>';
-        return view('addRoom')->with('newRoom',$newRoom);
+        return view('addRoom')->with('newRoom', $newRoom);
+        ;
     }
 }
-

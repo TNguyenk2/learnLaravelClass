@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Totoro milk tea</title>
+  <title>Alloo</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -69,8 +69,10 @@
     <p>Name: {{$newRoom['name']}}</p>
     <p>Description: {{$newRoom['description']}}</p>
     <p>Price: {{$newRoom['price']}}</p>
-    <p>Image: {{$newRoom['image']}}</p>
-    <img src="{{$newRoom['image']}}" alt="">
+    <p>Image: {{$newRoom['image']}}
+      
+    </p>
+   
     @endif
   </div>
 </body>
